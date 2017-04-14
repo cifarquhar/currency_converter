@@ -7,6 +7,8 @@ var app = function(){
 
   initialCurrency.getData(function(currency){
     console.log(currency)
+  initialCurrencyView.render(currency)
+  initialCurrencyView.createOption(currency)
   })
 
 
