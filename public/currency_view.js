@@ -8,7 +8,7 @@ CurrencyView.prototype = {
     // console.log(this)
     var currencyStatement = document.createElement("p")
     var currencyCode = currency.base
-    currencyStatement.innerText = "Starting currency: " + currencyCode
+    currencyStatement.innerText = currencyCode
     this.divElement.appendChild(currencyStatement)
     },
   
