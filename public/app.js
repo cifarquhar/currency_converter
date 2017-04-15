@@ -13,6 +13,12 @@ var app = function(){
     initialCurrencyView.createTargetOption(currency)
     initialCurrencyView.selectElement.addEventListener("change",function(){
     initialCurrencyView.updateView(currency,this.value)
+    // console.log(initialCurrencyView.exchangeRate)
+    })
+    initialCurrencyView.inputButton.addEventListener("click",function(){
+    // console.log("clicked")
+    // console.log(initialCurrencyView.inputValue.value)
+    initialCurrencyView.printConvertedValue(initialCurrencyView.inputValue.value)
     })
    
   })

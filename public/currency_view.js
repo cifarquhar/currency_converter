@@ -20,6 +20,7 @@ CurrencyView.prototype = {
     exchangeStatement.innerText = "Exchange Rate (" + defaultExchangeCode + "): " + defaultExchangeRate
     // this.divElement.appendChild(currencyStatement)
     // this.divElement.appendChild(exchangeStatement)
+    this.exchangeRate = defaultExchangeRate
     },
   
     createOption: function(currency){
@@ -50,8 +51,11 @@ CurrencyView.prototype = {
       })
       this.divElement.appendChild(selectElement)
       this.selectElement = selectElement
-      console.log(currency.rates)
-    },
+      this.inputButton = this.divElement.querySelector("#input-button")
+      this.inputValue = this.divElement.querySelector("#input-value")
+      console.log(this.inputValue)}
+      ,
+
     updateView: function(currency,index){
       var currencyStatement = document.querySelector("#input-code")
       var exchangeStatement = document.querySelector("#input-rate")
@@ -62,6 +66,16 @@ CurrencyView.prototype = {
       var exchangeRate = exchangeRates[index]
       currencyStatement.innerText = "Currency: " + currencyCode
       exchangeStatement.innerText = "Exchange Rate (" + exchangeCode + "): " + exchangeRate
+      this.exchangeRate = exchangeRate
+    },
+
+    printConvertedValue: function(input){
+      console.log(input)
+      console.log(this.exchangeRate)
+      var convertedAmount = (input * this.exchangeRate).toFixed(2)
+      console.log(convertedAmount)
+      var outputP = document.querySelector("#result-text")
+      outputP.innerText = "Value: " + convertedAmount
     }
 
 }
