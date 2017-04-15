@@ -18,8 +18,6 @@ CurrencyView.prototype = {
     var defaultExchangeRate = exchangeRates[0]
     currencyStatement.innerText = "Currency: " + currencyCode
     exchangeStatement.innerText = "Exchange Rate (" + defaultExchangeCode + "): " + defaultExchangeRate
-    // this.divElement.appendChild(currencyStatement)
-    // this.divElement.appendChild(exchangeStatement)
     this.exchangeRate = defaultExchangeRate
     },
   
@@ -36,13 +34,10 @@ CurrencyView.prototype = {
       })
       this.divElement.appendChild(selectElement)
       this.selectElement = selectElement
-      // console.log(this.selectElement)
     },
     createTargetOption: function(currency){
       var selectElement = document.createElement("select")
       var otherCurrencies = Object.keys(currency.rates)
-      // this.otherCurrencies = otherCurrencies
-      // console.log(this.otherCurrencies)
       otherCurrencies.forEach(function(currency,index){
         var optionElement = document.createElement("option")
         optionElement.value = index
