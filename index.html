@@ -5,24 +5,32 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <script src="currency.js"></script>
   <script src="currency_view.js"></script>
+  <script src="exchange_view.js"></script>
   <script src="app.js"></script>
 </head>
 <body>
 <h1>Currency Converter</h1>
 <section>
   <div id="input-currency">
-  <p>Starting Currency: </p>
+    <p id="input-code"></p>
+    <p id="input-rate"></p>
+    <input id="input-amount"/>
     <!-- <select id="input-currency"></select> -->
   </div>
   <div id="rate">
-    <!-- <div id="rate"></div>
-    <div id="equal-symbol">=</div>
-    <div><button id="calculate-button">Calculate</button></div> -->
+  <!-- <p id="forward-rate"></p>
+  <p id="backward-rate"></p> -->
+    <button id="calculate-button">Calculate</button>
   </div>
-  <div id="target-currency">
-  <p>Target Currency: </p>
+  <div id="result">
+    <p id="result-text">Value: </p>
+  </div>
+  <!-- <div id="target-currency"> -->
+<!--   <p id="target-code">Target Currency: </p> -->
   <!--   <select id="target-currency"></select> -->
-  </div>
+  <!-- <p id="target-rate">Exchange Rate: </p> -->
+
+  <!-- </div> -->
 </section>
 </body>
 </html>
