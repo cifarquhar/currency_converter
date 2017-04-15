@@ -23,16 +23,15 @@ CurrencyView.prototype = {
   
     createOption: function(currency){
       var selectElement = document.createElement("select")
-      // var otherCurrencies = Object.keys(currency.rates)
-      // this.otherCurrencies = otherCurrencies
-      // console.log(this.otherCurrencies)
+      var otherCurrencies = Object.keys(currency.rates)
       otherCurrencies.forEach(function(currency,index){
         var optionElement = document.createElement("option")
         optionElement.value = index
         optionElement.text = currency
         selectElement.appendChild(optionElement)
       })
-      this.divElement.appendChild(selectElement)
+      var inputSection = document.querySelector("#input-code-container")
+      inputSection.appendChild(selectElement)
       this.selectElement = selectElement
     },
     createTargetOption: function(currency){

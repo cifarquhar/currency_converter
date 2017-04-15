@@ -7,7 +7,7 @@ var app = function(){
   initialCurrency.getData(function(currency){
     console.log(currency)
     initialCurrencyView.render(currency)
-    // initialCurrencyView.getObject(currency)
+    initialCurrencyView.createOption(currency)
     initialCurrencyView.createTargetOption(currency)
     initialCurrencyView.selectElement.addEventListener("change",function(){
     initialCurrencyView.updateView(currency,this.value)
