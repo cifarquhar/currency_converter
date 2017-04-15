@@ -32,7 +32,8 @@ CurrencyView.prototype = {
       })
       var inputSection = document.querySelector("#input-code-container")
       inputSection.appendChild(selectElement)
-      this.selectElement = selectElement
+      this.otherCurrencies = otherCurrencies
+      this.currencySelectElement = selectElement
     },
     createTargetOption: function(currency){
       var selectElement = document.createElement("select")
@@ -44,7 +45,7 @@ CurrencyView.prototype = {
         selectElement.appendChild(optionElement)
       })
       this.divElement.appendChild(selectElement)
-      this.selectElement = selectElement
+      this.targetSelectElement = selectElement
       this.inputButton = this.divElement.querySelector("#input-button")
       this.inputValue = this.divElement.querySelector("#input-value")
     },
