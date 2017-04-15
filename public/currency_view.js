@@ -48,8 +48,7 @@ CurrencyView.prototype = {
       this.selectElement = selectElement
       this.inputButton = this.divElement.querySelector("#input-button")
       this.inputValue = this.divElement.querySelector("#input-value")
-      console.log(this.inputValue)}
-      ,
+    },
 
     updateView: function(currency,index){
       var currencyStatement = document.querySelector("#input-code")
@@ -65,10 +64,7 @@ CurrencyView.prototype = {
     },
 
     printConvertedValue: function(input){
-      console.log(input)
-      console.log(this.exchangeRate)
       var convertedAmount = (input * this.exchangeRate).toFixed(2)
-      console.log(convertedAmount)
       var outputP = document.querySelector("#result-text")
       outputP.innerText = "Value: " + convertedAmount
     }
