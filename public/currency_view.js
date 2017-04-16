@@ -27,9 +27,14 @@ CurrencyView.prototype = {
       while (selectElement.hasChildNodes()) {
           selectElement.removeChild(selectElement.lastChild);
       }
+      var defaultOption = document.createElement("option")
+      defaultOption.value = 0
+      defaultOption.text = "select"
+      defaultOption.selected = "selected"
+      selectElement.appendChild(defaultOption)
       otherCurrencies.forEach(function(currency,index){
         var optionElement = document.createElement("option")
-        optionElement.value = index
+        optionElement.value = index+1
         optionElement.text = currency
         selectElement.appendChild(optionElement)
       })
