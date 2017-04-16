@@ -22,8 +22,11 @@ CurrencyView.prototype = {
     },
   
     createOption: function(currency){
-      var selectElement = document.createElement("select")
+      var selectElement = document.querySelector("#input-selector")
       var otherCurrencies = Object.keys(currency.rates)
+      while (selectElement.hasChildNodes()) {
+          selectElement.removeChild(selectElement.lastChild);
+      }
       otherCurrencies.forEach(function(currency,index){
         var optionElement = document.createElement("option")
         optionElement.value = index
@@ -31,20 +34,23 @@ CurrencyView.prototype = {
         selectElement.appendChild(optionElement)
       })
       var inputSection = document.querySelector("#input-code-container")
-      inputSection.appendChild(selectElement)
+      // inputSection.appendChild(selectElement)
       this.otherCurrencies = otherCurrencies
       this.currencySelectElement = selectElement
     },
     createTargetOption: function(currency){
-      var selectElement = document.createElement("select")
+      var selectElement = document.querySelector("#target-selector")
       var otherCurrencies = Object.keys(currency.rates)
+      while (selectElement.hasChildNodes()) {
+          selectElement.removeChild(selectElement.lastChild);
+      }
       otherCurrencies.forEach(function(currency,index){
         var optionElement = document.createElement("option")
         optionElement.value = index
         optionElement.text = currency
         selectElement.appendChild(optionElement)
       })
-      this.divElement.appendChild(selectElement)
+      // this.divElement.appendChild(selectElement)
       this.targetSelectElement = selectElement
       this.inputButton = this.divElement.querySelector("#input-button")
       this.inputValue = this.divElement.querySelector("#input-value")
