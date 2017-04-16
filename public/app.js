@@ -7,29 +7,10 @@ var app = function(){
 
   initialCurrency.getData(function(currency){
     setup(currency)
-    // console.log(currency)
-    // currencyView.render(currency)
-    // currencyView.createOption(currency)
-    // currencyView.createTargetOption(currency)
-    // currencyView.currencySelectElement.addEventListener("change",function(){
-    // var newCurrencyCode = currencyView.otherCurrencies[this.value]
-    // console.log(newCurrencyCode)
-    // var newCurrency = new Currency(newCurrencyCode)
-
-    // console.log(newCurrency)
-    // // initialCurrencyView.render(newCurrency)
-    // })
-    // currencyView.targetSelectElement.addEventListener("change",function(){
-    // currencyView.updateView(currency,this.value)
-    // })
-    // currencyView.inputButton.addEventListener("click",function(){
-    // currencyView.printConvertedValue(currencyView.inputValue.value)
-    // })
-   
   })
-   
+  
 
-   var setup = function(currency){
+  var setup = function(currency){
     currencyView.updateView(currency,0)
     currencyView.createOption(currency)
     currencyView.createTargetOption(currency)
@@ -46,7 +27,7 @@ var app = function(){
     currencyView.inputButton.addEventListener("click",function(){
       currencyView.printConvertedValue(currencyView.inputValue.value)
     })
-   }
+  }
 }
 
 
