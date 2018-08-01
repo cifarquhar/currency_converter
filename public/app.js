@@ -10,6 +10,7 @@ var app = function(){
   
 
   var setup = function(currency){
+    console.log(currency)
     currencyView.updateView(currency,0)
     currencyView.createOption(currency)
     currencyView.createTargetOption(currency)
