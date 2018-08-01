@@ -15,7 +15,6 @@ var app = function(){
     currencyView.createOption(currency)
     currencyView.createTargetOption(currency)
     currencyView.currencySelectElement.addEventListener("change",function(){
-      // var newCurrencyCode = currencyView.otherCurrencies[this.value - 1]
       var newCurrency = new Currency()
       newCurrency.getData(function(currency){
         setup(currency)
