@@ -35,7 +35,6 @@ CurrencyView.prototype = {
       optionElement.text = currency
       selectElement.appendChild(optionElement)
     })
-    var inputSection = document.querySelector("#input-code-container")
     this.otherCurrencies = otherCurrencies
     this.currencySelectElement = selectElement
   },
