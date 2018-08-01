@@ -1,7 +1,6 @@
 var app = function(){
 
-  var initialCurrency = new Currency("GBP")
-  console.log(initialCurrency)
+  var initialCurrency = new Currency()
   var currencyView = new CurrencyView(document.querySelector("#input-currency"))
 
 
@@ -16,7 +15,7 @@ var app = function(){
     currencyView.createTargetOption(currency)
     currencyView.currencySelectElement.addEventListener("change",function(){
       var newCurrencyCode = currencyView.otherCurrencies[this.value - 1]
-      var newCurrency = new Currency(newCurrencyCode)
+      var newCurrency = new Currency()
       newCurrency.getData(function(currency){
         setup(currency)
       })
